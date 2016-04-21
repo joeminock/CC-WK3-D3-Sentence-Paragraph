@@ -76,7 +76,33 @@
 			this.sentenceArray = wordsArray;
 
 			this.getWordCount = function () {
-				return this.wordsArray.length;
+				var sum = 0;
+				for (var s = 0; s < sentenceArray.length; s++) {
+					sum += sentenceArray[s].getWordCount();
+				}
+				return sum;
+			}
+			
+			this.getLetterCount = function() {
+				var sum = 0;
+				for (var s = 0; s < sentenceArray.length; s++) {
+					sum += sentenceArray[s].getLetterCount(;)
+				}
+				return sum;
+			}
+			
+			this.getWordAt = function(index) {
+				allWords - [];
+				for (var s = 0; s < sentenceArray.length; s++){
+					allWords = allWords.concat(sentenceArray[s].wordsArray());
+				}
+				return allWords[index]
+			}
+		}
+	
+		
+		var s2 = new Sentence (["I", "am", "not", "human"]);
+		p = new Paragraph([s, s2]);
 		
 		
 		
